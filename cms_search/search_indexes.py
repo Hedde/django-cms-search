@@ -85,6 +85,8 @@ def page_index_factory(language_code):
                 self.prepared_data['text'] = text
                 self.prepared_data['language'] = self._language
                 return self.prepared_data
+            except TypeError:
+                return self.prepared_data
             finally:
                 if get_language() != current_languge:
                     activate(current_languge)
